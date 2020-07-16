@@ -11,6 +11,7 @@ msd_user = None
 
 COR = 0x690FC3
 
+
 @client.event
 async def on_ready():
     print('To pronto disgretça!')
@@ -32,40 +33,37 @@ async def on_member_remove(member):
     msg = "Flws ae {}, sucesso em sua jornada!".format(member.mention)
     await client.send_message(member, msg)
 
-@client.event
-async def on_message(message):
 
-    if message.content.lower().startswith('!h'):
-        if message.author.id == "211899509725331456":
-             embed = discord.Embed(
-                title="Eu nao sei pra que server isso entao to escrevendo qualquer coisa",
-                color=COR,
-                description="kkkkkkk sei la pora\n"
-                        "O pora é um teste asdasdasd\n"
-                        "boa"
-             )
+# @client.event
+# async def on_message(message):
 
-        botmsg = await client.send_message(message.channel, embed=embed)
-        await client.add_reaction(botmsg, "📘")
-        await client.add_reaction(botmsg, "📙")
+#     if message.content.lower().startswith('!h'):
+#         if message.author.id == "211899509725331456":
+#             embed = discord.Embed(
+#                 title="Eu nao sei pra que server isso entao to escrevendo qualquer coisa",
+#                 color=COR,
+#                 description="kkkkkkk sei la pora\n"
+#                 "O pora é um teste asdasdasd\n"
+#                 "boa"
+#             )
 
+#         botmsg = await message.channel.send(embed)
+#         await client.add_reaction(botmsg, "📘")
+#         await client.add_reaction(botmsg, "📙")
 
+#     if message.content.lower().startswith('?beibedobiruleibe') or message.content.lower().startswith('?b'):
+#         if message.author.id == "211899509725331456":
+#             await client.send_message(message.channel, "Vai te tomar nu cu")
+#         else:
+#             await client.send_message(message.channel, "Cade tua permissão? Seu hotario")
 
-    if message.content.lower().startswith('?beibedobiruleibe') or message.content.lower().startswith('?b'):
-        if message.author.id == "211899509725331456":
-            await client.send_message(message.channel, "Vai te tomar nu cu")
-        else:
-            await client.send_message(message.channel, "Cade tua permissão? Seu hotario")
+#     if message.content.lower().startswith('?m'):
 
-    if message.content.lower().startswith('?m'):
-
-        choice = random.randint(1,2)
-        if choice == 1:
-            await client.send_message(message.channel,'Voce é um merda')
-        if choice == 2:
-            await client.send_message(message.channel, 'Voce é realmente um merda')
-
-
+#         choice = random.randint(1, 2)
+#         if choice == 1:
+#             await client.send_message(message.channel, 'Voce é um merda')
+#         if choice == 2:
+#             await client.send_message(message.channel, 'Voce é realmente um merda')
 
 
 client.run(token)
